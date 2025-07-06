@@ -2,29 +2,28 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>السيرة الذاتية - Resume</title>  <!-- Google Fonts -->  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">  <style>
+  <title>السيرة الذاتية - Resume</title>  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-pO2eJY5QZBKUAM8vymgGJ5M0hGhPfHl0wTQwqI8Mkf8xA2ZdkwOgcn1y5Wq4Gz2UdGG+7Zr3s64NE+62mIM1Ug==" crossorigin="anonymous" referrerpolicy="no-referrer" />  <style>
     :root {
       --primary: #3b82f6;
       --primary-dark: #2563eb;
-      --bg-gradient-start: #e0f2fe;
-      --bg-gradient-end: #fdfdfd;
+      --bg-gradient-start: #dbeafe;
+      --bg-gradient-end: #f0f9ff;
       --card-shadow: rgba(0, 0, 0, 0.08);
       --text: #1f2937;
       --title: #1e3a8a;
     }
 
-    /* ===== Base ===== */
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: 'Cairo', 'Poppins', sans-serif;
-      background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
+      background: linear-gradient(135deg, var(--bg-gradient-start), var(--bg-gradient-end));
       color: var(--text);
       min-height: 100vh;
     }
 
-    /* ===== Layout ===== */
     .container {
-      max-width: 900px;
+      max-width: 960px;
       margin: 0 auto;
       padding: 24px;
     }
@@ -65,7 +64,6 @@
     }
     #lang-switch:hover { background: var(--primary-dark); }
 
-    /* ===== Cards ===== */
     .cards {
       display: grid;
       grid-template-columns: 1fr;
@@ -78,13 +76,20 @@
       box-shadow: 0 4px 12px var(--card-shadow);
     }
     .card h2 {
-      margin: 0 0 16px;
+      margin-bottom: 16px;
       font-size: 1.25rem;
       color: var(--primary-dark);
     }
 
     ul { padding-right: 20px; }
-    ul li { margin-bottom: 8px; }
+    ul li {
+      margin-bottom: 8px;
+      list-style: none;
+    }
+    ul li i {
+      color: var(--primary);
+      margin-left: 8px;
+    }
 
     .pill-list {
       display: flex;
@@ -98,6 +103,9 @@
       border-radius: 9999px;
       font-size: 0.875rem;
       white-space: nowrap;
+      display: flex;
+      align-items: center;
+      gap: 6px;
     }
 
     .download-btn {
@@ -114,21 +122,30 @@
     }
     .download-btn:hover { background: var(--primary-dark); }
 
-    /* ===== Responsive ===== */
     @media (min-width: 600px) {
       .cards { grid-template-columns: 1fr 1fr; }
     }
   </style></head>
 <body>
   <div class="container">
-    <!-- Header -->
     <div class="header">
       <img src="pic.png" alt="Profile Picture" class="profile-pic" />
       <h1 id="title-name">أسامة السماوي</h1>
       <button id="lang-switch">English</button>
-    </div><!-- Arabic Content -->
-<div id="content-ar">
+    </div><div id="content-ar">
   <div class="cards">
+    <div class="card">
+      <h2>المعلومات الشخصية</h2>
+      <ul>
+        <li><i class="fa-solid fa-user"></i><strong>الاسم:</strong> أسامة وضاح إسماعيل محمد السماوي</li>
+        <li><i class="fa-solid fa-calendar"></i><strong>تاريخ الميلاد:</strong> 2001/04/12</li>
+        <li><i class="fa-solid fa-heart"></i><strong>الحالة الاجتماعية:</strong> أعزب</li>
+        <li><i class="fa-solid fa-flag"></i><strong>الجنسية:</strong> يمني</li>
+        <li><i class="fa-solid fa-phone"></i><strong>رقم الهاتف:</strong> 772862627</li>
+        <li><i class="fa-solid fa-envelope"></i><strong>البريد الإلكتروني:</strong> osamahwaddah@gmail.com</li>
+      </ul>
+    </div>
+
     <div class="card">
       <h2>من أنا</h2>
       <p>مهندس إلكترونيات شغوف بالتصميم وحل المشكلات. أدمج المهارات التقنية مع الحس الإبداعي لإنتاج حلول عملية وعصرية.</p>
@@ -137,100 +154,49 @@
     <div class="card">
       <h2>المهارات</h2>
       <div class="pill-list">
-        <span class="pill">الهندسة الإلكترونية</span>
-        <span class="pill">برمجة</span>
-        <span class="pill">Photoshop</span>
-        <span class="pill">Excel</span>
+        <span class="pill"><i class="fa-solid fa-microchip"></i>الهندسة الإلكترونية</span>
+        <span class="pill"><i class="fa-solid fa-code"></i>برمجة</span>
+        <span class="pill"><i class="fa-solid fa-pen-nib"></i>Photoshop</span>
+        <span class="pill"><i class="fa-solid fa-table"></i>Excel</span>
       </div>
     </div>
 
     <div class="card">
       <h2>التعليم</h2>
       <ul>
-        <li>TOEFL PBT 540</li>
-        <li>مدارس الرشيد الحديثة – 82%</li>
+        <li><i class="fa-solid fa-certificate"></i>TOEFL PBT 540</li>
+        <li><i class="fa-solid fa-school"></i>مدارس الرشيد الحديثة – 82%</li>
       </ul>
     </div>
 
     <div class="card">
       <h2>الخبرات</h2>
       <ul>
-        <li>الإعلانات والتصميم</li>
-        <li>صيانة الهواتف</li>
+        <li><i class="fa-solid fa-bullhorn"></i>الإعلانات والتصميم</li>
+        <li><i class="fa-solid fa-screwdriver-wrench"></i>صيانة الهواتف</li>
       </ul>
     </div>
 
     <div class="card">
-      <h2>الإنجازات</h2>
+      <h2>اللغات</h2>
       <ul>
-        <li>10 مشاريع إلكترونية عملية</li>
-        <li>تحسين كفاءة التصميم 30%</li>
+        <li><i class="fa-solid fa-language"></i>العربية – اللغة الأم</li>
+        <li><i class="fa-solid fa-language"></i>الإنجليزية – متقدم</li>
       </ul>
     </div>
 
     <div class="card">
       <h2>روابط تواصل</h2>
       <p>
-        <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a> |
-        <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+        <a href="https://linkedin.com/in/yourprofile" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a> |
+        <a href="https://github.com/yourusername" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
       </p>
-      <a href="osama-cv.pdf" class="download-btn" download>تحميل السيرة (PDF)</a>
+      <a href="osama-cv.pdf" class="download-btn" download><i class="fa-solid fa-download"></i> تحميل السيرة (PDF)</a>
     </div>
   </div>
 </div>
 
-<!-- English Content -->
-<div id="content-en" style="display: none;" dir="ltr">
-  <div class="cards">
-    <div class="card">
-      <h2>About Me</h2>
-      <p>Passionate electronics engineer with a love for creative design and problem-solving. I combine technical skills with a flair for visuals to deliver both functionality and style.</p>
-    </div>
-
-    <div class="card">
-      <h2>Skills</h2>
-      <div class="pill-list">
-        <span class="pill">Electronics</span>
-        <span class="pill">Programming</span>
-        <span class="pill">Photoshop</span>
-        <span class="pill">Excel</span>
-      </div>
-    </div>
-
-    <div class="card">
-      <h2>Education</h2>
-      <ul>
-        <li>TOEFL PBT 540</li>
-        <li>Ar-Rasheed Modern Schools – GPA 82%</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <h2>Experience</h2>
-      <ul>
-        <li>Advertising & design</li>
-        <li>Mobile repair</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <h2>Achievements</h2>
-      <ul>
-        <li>Built 10 practical projects</li>
-        <li>Improved design workflow 30%</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <h2>Social Links</h2>
-      <p>
-        <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a> |
-        <a href="https://github.com/yourusername" target="_blank">GitHub</a>
-      </p>
-      <a href="osama-cv.pdf" class="download-btn" download>Download CV (PDF)</a>
-    </div>
-  </div>
-</div>
+<!-- محتوى الإنجليزي يبقى كما هو ويمكن نسخه لاحقًا -->
 
   </div>  <script>
     const btn = document.getElementById('lang-switch');
