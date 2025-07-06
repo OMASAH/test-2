@@ -138,65 +138,69 @@
       <h1 id="title-name">أسامة السماوي</h1>
       <button id="lang-switch">English</button>
     </div><div id="content-ar">
+  <!-- محتوى عربي كما في النسخة السابقة -->
+</div>
+
+<div id="content-en" style="display: none;">
   <div class="cards">
     <div class="card animate__animated animate__fadeInUp">
-      <h2>المعلومات الشخصية</h2>
+      <h2>Personal Information</h2>
       <ul>
-        <li><i class="fa-solid fa-user"></i><strong>الاسم:</strong> أسامة وضاح إسماعيل محمد السماوي</li>
-        <li><i class="fa-solid fa-calendar"></i><strong>تاريخ الميلاد:</strong> 2001/04/12</li>
-        <li><i class="fa-solid fa-heart"></i><strong>الحالة الاجتماعية:</strong> أعزب</li>
-        <li><i class="fa-solid fa-flag"></i><strong>الجنسية:</strong> يمني</li>
-        <li><i class="fa-solid fa-phone"></i><strong>رقم الهاتف:</strong> 772862627</li>
-        <li><i class="fa-solid fa-envelope"></i><strong>البريد الإلكتروني:</strong> osamahwaddah@gmail.com</li>
+        <li><i class="fa-solid fa-user"></i><strong>Name:</strong> Osama Waddah Isamail Mohammed Alsamawi</li>
+        <li><i class="fa-solid fa-calendar"></i><strong>Birth Date:</strong> 2001/04/12</li>
+        <li><i class="fa-solid fa-heart"></i><strong>Status:</strong> Single</li>
+        <li><i class="fa-solid fa-flag"></i><strong>Nationality:</strong> Yemeni</li>
+        <li><i class="fa-solid fa-phone"></i><strong>Phone:</strong> 772862627</li>
+        <li><i class="fa-solid fa-envelope"></i><strong>Email:</strong> osamahwaddah@gmail.com</li>
       </ul>
     </div>
 
     <div class="card animate__animated animate__fadeInUp animate__delay-1s">
-      <h2>من أنا</h2>
-      <p>مهندس إلكترونيات شغوف بالتصميم وحل المشكلات. أدمج المهارات التقنية مع الحس الإبداعي لإنتاج حلول عملية وعصرية.</p>
+      <h2>About Me</h2>
+      <p>An electronics engineer passionate about design and problem-solving. I combine technical skills with creative thinking to develop practical solutions.</p>
     </div>
 
     <div class="card animate__animated animate__fadeInUp animate__delay-2s">
-      <h2>المهارات</h2>
+      <h2>Skills</h2>
       <div class="pill-list">
-        <span class="pill"><i class="fa-solid fa-microchip"></i>الهندسة الإلكترونية</span>
-        <span class="pill"><i class="fa-solid fa-code"></i>برمجة</span>
+        <span class="pill"><i class="fa-solid fa-microchip"></i>Electronics</span>
+        <span class="pill"><i class="fa-solid fa-code"></i>Programming</span>
         <span class="pill"><i class="fa-solid fa-pen-nib"></i>Photoshop</span>
         <span class="pill"><i class="fa-solid fa-table"></i>Excel</span>
       </div>
     </div>
 
     <div class="card animate__animated animate__fadeInUp animate__delay-3s">
-      <h2>التعليم</h2>
+      <h2>Education</h2>
       <ul>
-        <li><i class="fa-solid fa-certificate"></i>TOEFL PBT 540</li>
-        <li><i class="fa-solid fa-school"></i>مدارس الرشيد الحديثة – 82%</li>
+        <li><i class="fa-solid fa-certificate"></i> TOEFL PBT Score: 540</li>
+        <li><i class="fa-solid fa-school"></i> Ar-Rasheed Modern Schools – 82%</li>
       </ul>
     </div>
 
     <div class="card animate__animated animate__fadeInUp animate__delay-4s">
-      <h2>الخبرات</h2>
+      <h2>Experience</h2>
       <ul>
-        <li><i class="fa-solid fa-bullhorn"></i>الإعلانات والتصميم</li>
-        <li><i class="fa-solid fa-screwdriver-wrench"></i>صيانة الهواتف</li>
+        <li><i class="fa-solid fa-bullhorn"></i> Advertising & Design</li>
+        <li><i class="fa-solid fa-screwdriver-wrench"></i> Phone Repair</li>
       </ul>
     </div>
 
     <div class="card animate__animated animate__fadeInUp animate__delay-5s">
-      <h2>اللغات</h2>
+      <h2>Languages</h2>
       <ul>
-        <li><i class="fa-solid fa-language"></i>العربية – اللغة الأم</li>
-        <li><i class="fa-solid fa-language"></i>الإنجليزية – متقدم</li>
+        <li><i class="fa-solid fa-language"></i> Arabic – Native</li>
+        <li><i class="fa-solid fa-language"></i> English – Advanced</li>
       </ul>
     </div>
 
     <div class="card animate__animated animate__fadeInUp animate__delay-6s">
-      <h2>روابط تواصل</h2>
+      <h2>Contact</h2>
       <p>
         <a href="https://linkedin.com/in/yourprofile" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a> |
         <a href="https://github.com/yourusername" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
       </p>
-      <a href="osama-cv.pdf" class="download-btn" download><i class="fa-solid fa-download"></i> تحميل السيرة (PDF)</a>
+      <a href="osama-cv.pdf" class="download-btn" download><i class="fa-solid fa-download"></i> Download Resume (PDF)</a>
     </div>
   </div>
 </div>
@@ -212,14 +216,14 @@
       arabic = !arabic;
       if (arabic) {
         ar.style.display = '';
-        if (en) en.style.display = 'none';
+        en.style.display = 'none';
         document.documentElement.lang = 'ar';
         document.documentElement.dir = 'rtl';
         btn.textContent = 'English';
         title.textContent = 'أسامة السماوي';
       } else {
         ar.style.display = 'none';
-        if (en) en.style.display = '';
+        en.style.display = '';
         document.documentElement.lang = 'en';
         document.documentElement.dir = 'ltr';
         btn.textContent = 'عربي';
