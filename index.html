@@ -3,7 +3,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>السيرة الذاتية - Resume</title>  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-pO2eJY5QZBKUAM8vymgGJ5M0hGhPfHl0wTQwqI8Mkf8xA2ZdkwOgcn1y5Wq4Gz2UdGG+7Zr3s64NE+62mIM1Ug==" crossorigin="anonymous" referrerpolicy="no-referrer" />  <style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>  <style>
     :root {
       --primary: #3b82f6;
       --primary-dark: #2563eb;
@@ -20,6 +21,7 @@
       background: linear-gradient(135deg, var(--bg-gradient-start), var(--bg-gradient-end));
       color: var(--text);
       min-height: 100vh;
+      scroll-behavior: smooth;
     }
 
     .container {
@@ -74,6 +76,7 @@
       border-radius: 12px;
       padding: 24px;
       box-shadow: 0 4px 12px var(--card-shadow);
+      animation: fadeInUp 1s ease;
     }
     .card h2 {
       margin-bottom: 16px;
@@ -106,6 +109,7 @@
       display: flex;
       align-items: center;
       gap: 6px;
+      animation: pulse 1s infinite alternate;
     }
 
     .download-btn {
@@ -119,6 +123,7 @@
       font-weight: 600;
       box-shadow: 0 4px 10px var(--card-shadow);
       transition: background 0.25s;
+      animation: fadeIn 1s ease-in-out;
     }
     .download-btn:hover { background: var(--primary-dark); }
 
@@ -128,13 +133,13 @@
   </style></head>
 <body>
   <div class="container">
-    <div class="header">
+    <div class="header animate__animated animate__fadeInDown">
       <img src="pic.png" alt="Profile Picture" class="profile-pic" />
       <h1 id="title-name">أسامة السماوي</h1>
       <button id="lang-switch">English</button>
     </div><div id="content-ar">
   <div class="cards">
-    <div class="card">
+    <div class="card animate__animated animate__fadeInUp">
       <h2>المعلومات الشخصية</h2>
       <ul>
         <li><i class="fa-solid fa-user"></i><strong>الاسم:</strong> أسامة وضاح إسماعيل محمد السماوي</li>
@@ -146,12 +151,12 @@
       </ul>
     </div>
 
-    <div class="card">
+    <div class="card animate__animated animate__fadeInUp animate__delay-1s">
       <h2>من أنا</h2>
       <p>مهندس إلكترونيات شغوف بالتصميم وحل المشكلات. أدمج المهارات التقنية مع الحس الإبداعي لإنتاج حلول عملية وعصرية.</p>
     </div>
 
-    <div class="card">
+    <div class="card animate__animated animate__fadeInUp animate__delay-2s">
       <h2>المهارات</h2>
       <div class="pill-list">
         <span class="pill"><i class="fa-solid fa-microchip"></i>الهندسة الإلكترونية</span>
@@ -161,7 +166,7 @@
       </div>
     </div>
 
-    <div class="card">
+    <div class="card animate__animated animate__fadeInUp animate__delay-3s">
       <h2>التعليم</h2>
       <ul>
         <li><i class="fa-solid fa-certificate"></i>TOEFL PBT 540</li>
@@ -169,7 +174,7 @@
       </ul>
     </div>
 
-    <div class="card">
+    <div class="card animate__animated animate__fadeInUp animate__delay-4s">
       <h2>الخبرات</h2>
       <ul>
         <li><i class="fa-solid fa-bullhorn"></i>الإعلانات والتصميم</li>
@@ -177,7 +182,7 @@
       </ul>
     </div>
 
-    <div class="card">
+    <div class="card animate__animated animate__fadeInUp animate__delay-5s">
       <h2>اللغات</h2>
       <ul>
         <li><i class="fa-solid fa-language"></i>العربية – اللغة الأم</li>
@@ -185,7 +190,7 @@
       </ul>
     </div>
 
-    <div class="card">
+    <div class="card animate__animated animate__fadeInUp animate__delay-6s">
       <h2>روابط تواصل</h2>
       <p>
         <a href="https://linkedin.com/in/yourprofile" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a> |
@@ -195,8 +200,6 @@
     </div>
   </div>
 </div>
-
-<!-- محتوى الإنجليزي يبقى كما هو ويمكن نسخه لاحقًا -->
 
   </div>  <script>
     const btn = document.getElementById('lang-switch');
@@ -209,14 +212,14 @@
       arabic = !arabic;
       if (arabic) {
         ar.style.display = '';
-        en.style.display = 'none';
+        if (en) en.style.display = 'none';
         document.documentElement.lang = 'ar';
         document.documentElement.dir = 'rtl';
         btn.textContent = 'English';
         title.textContent = 'أسامة السماوي';
       } else {
         ar.style.display = 'none';
-        en.style.display = '';
+        if (en) en.style.display = '';
         document.documentElement.lang = 'en';
         document.documentElement.dir = 'ltr';
         btn.textContent = 'عربي';
