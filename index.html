@@ -6,182 +6,64 @@
   <title>السيرة الذاتية - Resume</title>
 
   <!-- خطوط وأيقونات -->
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600&family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600&family=Poppins:wght@400;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
   <style>
-    :root {
-      --primary: #4f46e5;
-      --secondary: #3b82f6;
-      --bg-gradient-start: #dbeafe;
-      --bg-gradient-end: #f0f9ff;
-      --card-shadow: rgba(0, 0, 0, 0.08);
-      --text: #1f2937;
-      --title: #1e3a8a;
+    :root{
+      --primary:#4f46e5;
+      --secondary:#3b82f6;
+      --bg1:#dbeafe;
+      --bg2:#f0f9ff;
+      --text:#1f2937;
+      --title:#1e3a8a;
+      --shadow:rgba(0,0,0,.08);
     }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      font-family:'Cairo','Poppins',sans-serif;
+      background:linear-gradient(135deg,var(--bg1),var(--bg2));
+      color:var(--text);min-height:100vh;scroll-behavior:smooth
     }
-
-    body {
-      font-family: 'Cairo', 'Poppins', sans-serif;
-      background: linear-gradient(135deg, var(--bg-gradient-start), var(--bg-gradient-end));
-      color: var(--text);
-      min-height: 100vh;
-      scroll-behavior: smooth;
+    .container{max-width:960px;margin:auto;padding:24px}
+    .header{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:32px}
+    .profile-pic{width:120px;height:120px;border-radius:50%;object-fit:cover;border:4px solid var(--secondary);box-shadow:0 4px 8px var(--shadow)}
+    h1{font-size:2rem;font-weight:600;color:var(--title)}
+    #lang-switch{background:var(--secondary);color:#fff;border:none;padding:10px 18px;border-radius:8px;cursor:pointer;font-weight:600;transition:.25s}
+    #lang-switch:hover{background:var(--primary)}
+    .cards{display:grid;gap:20px}
+    @media(min-width:600px){.cards{grid-template-columns:1fr 1fr}}
+    .card{background:#fff;border-radius:12px;padding:24px;box-shadow:0 4px 12px var(--shadow);animation:fadeInUp 1s}
+    .card h2{margin-bottom:16px;font-size:1.25rem;color:var(--primary)}
+    ul{padding-right:20px}
+    ul li{list-style:none;margin-bottom:8px;display:flex;align-items:center;gap:8px}
+    ul li i{color:var(--primary)}
+    .pill-list{display:flex;flex-wrap:wrap;gap:8px}
+    .pill{background:var(--secondary);color:#fff;padding:6px 12px;border-radius:999px;font-size:.875rem;display:flex;align-items:center;gap:6px;animation:pulse 1s infinite alternate}
+    /* زر التحميل المتدرّج */
+    .download-btn{
+      display:inline-flex;align-items:center;gap:10px;
+      margin:40px auto 0;padding:14px 28px;font:bold 1rem 'Cairo',sans-serif;
+      color:#fff;background:linear-gradient(to right,var(--primary),var(--secondary));
+      border-radius:999px;text-decoration:none;
+      box-shadow:0 4px 14px rgba(0,0,0,.1);
+      transition:transform .2s,box-shadow .2s
     }
-
-    .container {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 24px;
-    }
-
-    .header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      margin-bottom: 32px;
-    }
-
-    .profile-pic {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 4px solid var(--secondary);
-      box-shadow: 0 4px 8px var(--card-shadow);
-    }
-
-    h1 {
-      margin: 0;
-      font-size: 2rem;
-      font-weight: 600;
-      color: var(--title);
-    }
-
-    #lang-switch {
-      background: var(--secondary);
-      color: #fff;
-      border: none;
-      padding: 10px 18px;
-      border-radius: 8px;
-      cursor: pointer;
-      font-weight: 600;
-      transition: background 0.25s;
-    }
-
-    #lang-switch:hover {
-      background: var(--primary);
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 20px;
-    }
-
-    @media (min-width: 600px) {
-      .cards {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-
-    .card {
-      background: #fff;
-      border-radius: 12px;
-      padding: 24px;
-      box-shadow: 0 4px 12px var(--card-shadow);
-      animation: fadeInUp 1s ease;
-    }
-
-    .card h2 {
-      margin-bottom: 16px;
-      font-size: 1.25rem;
-      color: var(--primary);
-    }
-
-    ul {
-      padding-right: 20px;
-    }
-
-    ul li {
-      margin-bottom: 8px;
-      list-style: none;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    ul li i {
-      color: var(--primary);
-      min-width: 18px;
-      text-align: center;
-    }
-
-    .pill-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .pill {
-      background: var(--secondary);
-      color: #fff;
-      padding: 6px 12px;
-      border-radius: 9999px;
-      font-size: 0.875rem;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      animation: pulse 1s infinite alternate;
-    }
-
-    /* زر تحميل متدرج */
-    .download-btn-gradient {
-      display: inline-block;
-      margin: 40px auto 0;
-      padding: 14px 28px;
-      font-weight: bold;
-      font-size: 1rem;
-      color: #fff;
-      background: linear-gradient(to right, var(--primary), var(--secondary));
-      border-radius: 999px;
-      text-decoration: none;
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
-      transition: transform 0.2s, box-shadow 0.2s;
-      text-align: center;
-    }
-
-    .download-btn-gradient:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-    }
-
-    .download-btn-gradient i {
-      margin-left: 10px;
-    }
-
-    .fade-transition {
-      animation: fadeIn 0.8s ease-in-out;
-    }
+    .download-btn:hover{transform:translateY(-4px);box-shadow:0 6px 20px rgba(0,0,0,.15)}
+    .fade{animation:fadeIn .8s}
   </style>
 </head>
 <body>
   <div class="container">
     <div class="header animate__animated animate__fadeInDown">
-      <img src="pic.png" alt="Profile Picture" class="profile-pic" />
-      <h1 id="title-name">أسامة </h1>
+      <img src="pic.png" alt="Profile Picture" class="profile-pic"/>
+      <h1 id="title-name">أسامة السماوي</h1>
       <button id="lang-switch">English</button>
     </div>
 
-    <!-- المحتوى العربي -->
-    <div id="content-ar" class="fade-transition">
+    <!-- Arabic -->
+    <div id="content-ar" class="fade">
       <div class="cards">
         <div class="card">
           <h2>المعلومات الشخصية</h2>
@@ -191,9 +73,10 @@
             <li><i class="fa-solid fa-heart"></i> الحالة الاجتماعية: متزوج</li>
             <li><i class="fa-solid fa-flag"></i> الجنسية: يمني</li>
             <li><i class="fa-solid fa-phone"></i> الهاتف: 772862627</li>
-            <li><i class="fa-solid fa-envelope"></i> البريد الإلكتروني: osamahwaddah@gmail.com</li>
+            <li><i class="fa-solid fa-envelope"></i> البريد: osamahwaddah@gmail.com</li>
           </ul>
         </div>
+
         <div class="card">
           <h2>المهارات</h2>
           <div class="pill-list">
@@ -203,44 +86,48 @@
             <span class="pill"><i class="fa-solid fa-table"></i> أوفيس</span>
           </div>
         </div>
+
         <div class="card">
           <h2>التعليم</h2>
           <ul>
-            <li><i class="fa-solid fa-certificate"></i> حصلت على شهادة TOEFL PBT بدرجة 540</li>
-            <li><i class="fa-solid fa-school"></i> مدارس الرشيد الحديثة - الثانوية بنسبة 82%</li>
+            <li><i class="fa-solid fa-certificate"></i> شهادة TOEFL PBT - 540</li>
+            <li><i class="fa-solid fa-school"></i> مدارس الرشيد الحديثة - 82%</li>
           </ul>
         </div>
+
         <div class="card">
           <h2>الخبرات</h2>
           <ul>
             <li><i class="fa-solid fa-bullhorn"></i> الإعلان والتصميم</li>
-            <li><i class="fa-solid fa-mobile-screen-button"></i> إصلاح وصيانة الهواتف</li>
+            <li><i class="fa-solid fa-mobile-screen-button"></i> صيانة الهواتف</li>
           </ul>
         </div>
+
         <div class="card">
           <h2>اللغات</h2>
           <div class="pill-list">
-            <span class="pill"><i class="fa-solid fa-language"></i> العربية (اللغة الأم)</span>
-            <span class="pill"><i class="fa-solid fa-language"></i> الإنجليزية (متقدم)</span>
+            <span class="pill"><i class="fa-solid fa-language"></i> العربية</span>
+            <span class="pill"><i class="fa-solid fa-language"></i> الإنجليزية</span>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- English Content -->
-    <div id="content-en" class="fade-transition" style="display:none">
+    <!-- English -->
+    <div id="content-en" class="fade" style="display:none">
       <div class="cards">
         <div class="card">
           <h2>Personal Information</h2>
           <ul>
             <li><i class="fa-solid fa-user"></i> Name: Osama Waddah Isamail Mohammed Alsamawi</li>
-            <li><i class="fa-solid fa-calendar"></i> Birth Date: 2001/04/12</li>
+            <li><i class="fa-solid fa-calendar"></i> Birth: 2001/04/12</li>
             <li><i class="fa-solid fa-heart"></i> Status: Married</li>
             <li><i class="fa-solid fa-flag"></i> Nationality: Yemeni</li>
             <li><i class="fa-solid fa-phone"></i> Phone: 772862627</li>
             <li><i class="fa-solid fa-envelope"></i> Email: osamahwaddah@gmail.com</li>
           </ul>
         </div>
+
         <div class="card">
           <h2>Skills</h2>
           <div class="pill-list">
@@ -250,43 +137,46 @@
             <span class="pill"><i class="fa-solid fa-table"></i> Office</span>
           </div>
         </div>
+
         <div class="card">
           <h2>Education</h2>
           <ul>
-            <li><i class="fa-solid fa-certificate"></i> Obtained TOEFL PBT certificate with score 540</li>
-            <li><i class="fa-solid fa-school"></i> Ar-Rasheed Modern Schools - High school GPA 82%</li>
+            <li><i class="fa-solid fa-certificate"></i> TOEFL PBT - 540</li>
+            <li><i class="fa-solid fa-school"></i> Ar-Rasheed Modern Schools - 82%</li>
           </ul>
         </div>
+
         <div class="card">
           <h2>Experience</h2>
           <ul>
-            <li><i class="fa-solid fa-bullhorn"></i> Advertising and design</li>
-            <li><i class="fa-solid fa-mobile-screen-button"></i> Phone repair and troubleshooting</li>
+            <li><i class="fa-solid fa-bullhorn"></i> Advertising & Design</li>
+            <li><i class="fa-solid fa-mobile-screen-button"></i> Phone Repair</li>
           </ul>
         </div>
+
         <div class="card">
           <h2>Languages</h2>
           <div class="pill-list">
-            <span class="pill"><i class="fa-solid fa-language"></i> Arabic (Native)</span>
-            <span class="pill"><i class="fa-solid fa-language"></i> English (Advanced)</span>
+            <span class="pill"><i class="fa-solid fa-language"></i> Arabic</span>
+            <span class="pill"><i class="fa-solid fa-language"></i> English</span>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- زر التحميل -->
+    <!-- Download Button -->
     <div style="text-align:center">
-      <a href="resume.pdf" download class="download-btn-gradient">
+      <a href="resume.pdf" download class="download-btn">
         <i class="fa-solid fa-cloud-arrow-down"></i> تحميل السيرة الذاتية
       </a>
     </div>
   </div>
 
   <script>
-    const btn = document.getElementById('lang-switch');
-    const ar = document.getElementById('content-ar');
-    const en = document.getElementById('content-en');
-    const title = document.getElementById('title-name');
+    const btn   = document.getElementById('lang-switch'),
+          ar    = document.getElementById('content-ar'),
+          en    = document.getElementById('content-en'),
+          title = document.getElementById('title-name');
     let arabic = true;
 
     btn.addEventListener('click', () => {
@@ -295,14 +185,14 @@
         ar.style.display = '';
         en.style.display = 'none';
         document.documentElement.lang = 'ar';
-        document.documentElement.dir = 'rtl';
+        document.documentElement.dir  = 'rtl';
         btn.textContent = 'English';
         title.textContent = 'أسامة السماوي';
       } else {
         ar.style.display = 'none';
         en.style.display = '';
         document.documentElement.lang = 'en';
-        document.documentElement.dir = 'ltr';
+        document.documentElement.dir  = 'ltr';
         btn.textContent = 'عربي';
         title.textContent = 'Osama Alsamawi';
       }
