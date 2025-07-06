@@ -8,13 +8,8 @@
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0; padding: 20px;
-      background: #f0f4ff;
-      color: #333;
-      transition: background-color 0.3s, color 0.3s;
-    }
-    body.dark {
-      background: #0f172a;
-      color: #e2e8f0;
+      background: #f9fafb;
+      color: #111827;
     }
     #language-toggle {
       position: fixed;
@@ -29,10 +24,6 @@
       font-weight: bold;
       z-index: 1000;
     }
-    body.dark #language-toggle {
-      background: #60a5fa;
-      color: #0f172a;
-    }
     .container {
       max-width: 800px;
       margin: 60px auto 40px;
@@ -42,23 +33,18 @@
       border-radius: 12px;
       padding: 20px;
       margin-bottom: 20px;
-      box-shadow: 0 4px 10px rgba(59, 130, 246, 0.1);
-      transition: background-color 0.3s, color 0.3s;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
     }
-    body.dark .section-card {
-      background: #1e293b;
-      color: #e2e8f0;
-      box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3);
+    h1 {
+      font-size: 2rem;
+      color: #1e40af;
+      margin-bottom: 20px;
     }
     h2 {
       color: #2563eb;
       margin-bottom: 15px;
       border-left: 4px solid #3b82f6;
       padding-left: 10px;
-    }
-    body.dark h2 {
-      color: #60a5fa;
-      border-left-color: #60a5fa;
     }
     ul {
       list-style-type: disc;
@@ -72,19 +58,10 @@
       border-radius: 8px;
       text-decoration: none;
       font-weight: bold;
-      box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3);
-      transition: background-color 0.3s ease;
+      box-shadow: 0 4px 10px rgba(59, 130, 246, 0.2);
     }
     a.download-btn:hover {
       background-color: #2563eb;
-    }
-    body.dark a.download-btn {
-      background-color: #60a5fa;
-      color: #0f172a;
-    }
-    body.dark a.download-btn:hover {
-      background-color: #3b82f6;
-      color: white;
     }
     .hidden {
       display: none;
@@ -264,24 +241,19 @@
     const toggleBtn = document.getElementById('language-toggle');
     const arabicContent = document.getElementById('arabic-content');
     const englishContent = document.getElementById('english-content');
-    const body = document.body;
-
-    // Start with Arabic + dark mode enabled by default
     let isArabic = true;
-    body.classList.add('dark');
-    toggleBtn.textContent = 'English';
 
     toggleBtn.addEventListener('click', () => {
       isArabic = !isArabic;
       if (isArabic) {
         arabicContent.classList.remove('hidden');
         englishContent.classList.add('hidden');
-        body.setAttribute('dir', 'rtl');
+        document.body.setAttribute('dir', 'rtl');
         toggleBtn.textContent = 'English';
       } else {
         arabicContent.classList.add('hidden');
         englishContent.classList.remove('hidden');
-        body.setAttribute('dir', 'ltr');
+        document.body.setAttribute('dir', 'ltr');
         toggleBtn.textContent = 'عربي';
       }
     });
