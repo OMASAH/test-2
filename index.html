@@ -127,6 +127,10 @@
     }
     .download-btn:hover { background: var(--primary-dark); }
 
+    .fade-transition {
+      animation: fadeIn 0.8s ease-in-out;
+    }
+
     @media (min-width: 600px) {
       .cards { grid-template-columns: 1fr 1fr; }
     }
@@ -137,12 +141,38 @@
       <img src="pic.png" alt="Profile Picture" class="profile-pic" />
       <h1 id="title-name">أسامة السماوي</h1>
       <button id="lang-switch">English</button>
-    </div><div id="content-ar">
-  <!-- المحتوى العربي هنا -->
+    </div><div id="content-ar" class="fade-transition">
+  <div class="cards">
+    <div class="card">
+      <h2>المعلومات الشخصية</h2>
+      <ul>
+        <li><i class="fa-solid fa-user"></i> الاسم: أسامة وضاح إسماعيل محمد السماوي</li>
+        <li><i class="fa-solid fa-calendar"></i> تاريخ الميلاد: 2001/04/12</li>
+        <li><i class="fa-solid fa-heart"></i> الحالة الاجتماعية: متزوج</li>
+        <li><i class="fa-solid fa-flag"></i> الجنسية: يمني</li>
+        <li><i class="fa-solid fa-phone"></i> الهاتف: 772862627</li>
+        <li><i class="fa-solid fa-envelope"></i> البريد الإلكتروني: osamahwaddah@gmail.com</li>
+      </ul>
+    </div>
+    <!-- يمكن إضافة المزيد من الأقسام هنا -->
+  </div>
 </div>
 
-<div id="content-en" style="display:none">
-  <!-- المحتوى الإنجليزي هنا -->
+<div id="content-en" class="fade-transition" style="display:none">
+  <div class="cards">
+    <div class="card">
+      <h2>Personal Information</h2>
+      <ul>
+        <li><i class="fa-solid fa-user"></i> Name: Osama Waddah Isamail Mohammed Alsamawi</li>
+        <li><i class="fa-solid fa-calendar"></i> Birth Date: 2001/04/12</li>
+        <li><i class="fa-solid fa-heart"></i> Status: Married</li>
+        <li><i class="fa-solid fa-flag"></i> Nationality: Yemeni</li>
+        <li><i class="fa-solid fa-phone"></i> Phone: 772862627</li>
+        <li><i class="fa-solid fa-envelope"></i> Email: osamahwaddah@gmail.com</li>
+      </ul>
+    </div>
+    <!-- يمكن إضافة المزيد من الأقسام هنا -->
+  </div>
 </div>
 
   </div>  <script>
@@ -157,6 +187,7 @@
       if (arabic) {
         ar.style.display = '';
         en.style.display = 'none';
+        ar.classList.add('fade-transition');
         document.documentElement.lang = 'ar';
         document.documentElement.dir = 'rtl';
         btn.textContent = 'English';
@@ -164,6 +195,7 @@
       } else {
         ar.style.display = 'none';
         en.style.display = '';
+        en.classList.add('fade-transition');
         document.documentElement.lang = 'en';
         document.documentElement.dir = 'ltr';
         btn.textContent = 'عربي';
